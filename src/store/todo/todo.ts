@@ -13,6 +13,7 @@ export const todoState = () => {
     const state = reactive<TodoState>({
         todoItems: [],
     })
+    console.log(state)
 
     // Todoを追加
     const addTodo = (value: string) => {
@@ -20,7 +21,7 @@ export const todoState = () => {
             alert('値が入力されていません')
             return
         }
-        state.todoItems = [
+        state.todoItems = state.todoItems = [
             ...state.todoItems,
             {
                 id: state.todoItems.length + 1,
@@ -28,9 +29,15 @@ export const todoState = () => {
             },
         ]
     }
+
+    // Todo削除機能
+    const deleteTodo = (id: number) => {
+        state.todoItems = state.todoItems.filter((todo) => todo.id !== id)
+    }
     return {
         state: readonly(state),
         addTodo,
+        deleteTodo,
     }
 }
 
