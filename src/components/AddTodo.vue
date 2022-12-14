@@ -1,5 +1,6 @@
 <template>
     <section class="container-area">
+        <h1 class="title">Todo List</h1>
         <form action="" @submit.prevent="addTodoFunc">
             <input
                 v-model="inputValue"
