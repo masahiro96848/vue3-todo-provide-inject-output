@@ -3,7 +3,7 @@
         <h1 class="title">Todo List</h1>
         <AddTodo v-model:todo="todo" @add-todo="handleAddTodo" />
         <!-- todoListのエリア -->
-        <TodoList :todo="todo" :todos="todos" />
+        <TodoList />
     </div>
 </template>
 

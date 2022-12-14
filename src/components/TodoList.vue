@@ -1,8 +1,8 @@
 <template>
     <section class="container-area">
         <ul class="list-row">
-            <li v-for="todo in todos" class="list">
-                <span class="item">{{ todo }}</span>
+            <li v-for="todo in filterTodoItems" class="list">
+                <span class="item">{{ todo.text }}</span>
                 <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
             </li>
         </ul>
@@ -11,10 +11,7 @@
 
 <script setup lang="ts">
 import TodoItem from './TodoItem.vue'
-interface Todo {
-    todo: string
-    todos: Array<string>
-}
+import { useFilterValue } from '../composables/useFilterValue'
 
-defineProps<Todo>()
+const { filterTodoItems } = useFilterValue()
 </script>
