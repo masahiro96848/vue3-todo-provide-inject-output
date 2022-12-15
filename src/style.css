@@ -61,6 +61,12 @@ body {
     margin-top: 8px;
 }
 
+.item-done {
+    text-decoration: line-through;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
 .edit-input {
     border: none;
     background-color: #f0f0f0;
@@ -80,4 +86,8 @@ body {
     width: 30px;
     cursor: pointer;
     margin-top: 5px;
+}
+
+.input-todo-done {
+    transform: scale(1.5);
 }

@@ -17,7 +17,6 @@ export const useFilterValue = () => {
 
         // filterValueが空の時は、todoItems(既存の配列)を返す
         if (!state.filterValue) return todoState.todoItems
-        console.log('テスト')
         return todoState.todoItems.filter((todo) =>
             todo.text.includes(state.filterValue)
         )

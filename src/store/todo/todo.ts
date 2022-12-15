@@ -5,6 +5,7 @@ type TodoState = {
     todoItems: {
         id: number
         text: string
+        done: boolean
     }[]
 }
 
@@ -26,6 +27,7 @@ export const todoState = () => {
             {
                 id: state.todoItems.length + 1,
                 text: value,
+                done: false,
             },
         ]
     }
@@ -34,10 +36,21 @@ export const todoState = () => {
     const deleteTodo = (id: number) => {
         state.todoItems = state.todoItems.filter((todo) => todo.id !== id)
     }
+
+    // Todo完了機能
+    const doneTodo = (id: number) => {
+        const todo = state.todoItems.find((item) => item.id === id)
+        if (!todo) {
+            return
+        }
+        todo.done = !todo.done
+    }
+
     return {
         state: readonly(state),
         addTodo,
         deleteTodo,
+        doneTodo,
     }
 }
 
